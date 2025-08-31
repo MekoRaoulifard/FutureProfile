@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-dark: #000000;
+  --color-bg-base: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-accent: #205c6b; /* main accent */
+  --color-accent-hover: #205c6b; /* hover and active tab */
+  --color-border: #ffffff;
+ 
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.grid {
+  gap: 2.5rem; /* slightly wider gap */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #205c6b;
+}
+
+
+/* Button base style */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+/* Hover border color on button */
+button:hover {
+  border-color: #205c6b;
+}
+/* Focus outline */
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Persistent active tab background and text */
+.bg-accent {
+  background-color: var(--color-accent-hover) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-color: var(--color-accent-hover) !important;
+}
+
+/* Hover background for inactive tabs */
+.bg-accent-hover:hover {
+  background-color: var(--color-accent-hover);
+  color: #ffffff;
+}
+
+/* Inactive tab base colors */
+.bg-bg-base {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+.card {
+  padding: 2em;
+}
+/* .grid > div {
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ */
+ 
+.large-card p {
+  text-align: justify;
+
+}
+
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+nav > div {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
