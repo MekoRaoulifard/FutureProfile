@@ -17,7 +17,7 @@
       <div class="flex flex-col justify-center px-10 lg:px-14 w-5/12 text-center md:text-left z-10 overflow-hidden">
         <p class="mono-tag text-sm text-text-secondary mb-6">August 31, 2025</p>
         <h1 class="text-5xl lg:text-6xl font-extrabold text-text-primary mb-7 leading-tight">
-          Hi, I’m <span class="text-accent">me</span>
+          Hi, I’m <span class="text-accent">Meko</span>
         </h1>
         <p class="text-xl lg:text-2xl text-text-secondary mb-9">
           Master’s Student • Founder of Zeryaw • UX/UI Designer • Web & App Developer • AR/VR Enthusiast
