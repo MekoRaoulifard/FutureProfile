@@ -72,7 +72,7 @@
             View my portfolio deployed on Vercel, showcasing my latest projects and designs.
           </p>
           <a
-            href="https://your-vercel-link.vercel.app"
+            href="https://future-profile.vercel.app/"
             target="_blank"
             class="text-accent hover:text-accent-hover mt-2 block transition"
           >
@@ -87,7 +87,7 @@
             Check the full source code for my projects on GitHub, including the Zeryaw prototype and more.
           </p>
           <a
-            href="https://github.com/yourusername/zeryaw"
+            href="https://github.com/MekoRaoulifard/FutureProfile"
             target="_blank"
             class="text-accent hover:text-accent-hover mt-2 block transition"
           >
@@ -102,18 +102,18 @@
             Explore additional prototypes and design mockups on Figma, or download portfolio PDF.
           </p>
           <a
-            href="/pdfs/zeryaw.pdf"
+            
             target="_blank"
             class="text-accent hover:text-accent-hover mt-2 block transition"
           >
-            Download Portfolio PDF
+            Download Zeryaw portfolio PDF
           </a>
           <a
-            href="https://www.figma.com/proto/fHILCEZfmB21IagMl5BU22/Norsk-Kulturskatt-app-project-2?node-id=2008-1097&node-type=section&t=kNqSmqdQuWPME6CC-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=171%3A181"
-            target="_blank"
+            href="/pdfs/portfolio.pdf"
+              target="_blank"
             class="text-accent hover:text-accent-hover mt-2 block transition"
           >
-            Open other school Figma design
+            Download  page portofolio PDF
           </a>
         </div>
       </div>
