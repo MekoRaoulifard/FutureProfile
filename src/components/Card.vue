@@ -51,7 +51,7 @@ defineProps({
 </script>
 
 <style scoped>
-/* flat card styles & corner dots (same as before) */
+
 .group {
   border-width: 1px;
   border-style: solid;
