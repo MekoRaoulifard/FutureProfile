@@ -57,6 +57,119 @@
           class="custom-card"
         />
       </div>
+      <!-- CV Expandable Section -->
+      <Card
+        title="Example of my CV"
+        description=""
+        :borderColor="'#ffffff'"
+        class="custom-card cursor-pointer mt-8"
+        @click="toggleExpand"
+      />
+      <transition name="fade">
+        <div v-if="expanded" class="mt-4 bg-bg-dark p-8 border border-border md">
+          <div class="flex border-b border-border mb-6">
+            <button
+              @click="activeTab = 'en'"
+              :class="tabClass('en')"
+              class="flex-1 py-3 border-r border-border last:border-r-0 uppercase text-xs tracking-widest transition-colors duration-150"
+            >
+              English
+            </button>
+            <button
+              @click="activeTab = 'no'"
+              :class="tabClass('no')"
+              class="flex-1 py-3 uppercase text-xs tracking-widest transition-colors duration-150"
+            >
+              Norsk Bokmål
+            </button>
+          </div>
+
+          <!-- English CV Tab -->
+          <div v-if="activeTab === 'en'" class="min-h-[200px] pt-2 cv-content" @contextmenu.prevent>
+            <div class="cv-header">
+              <div class="left">
+                <h1>Meko Rasoulifard</h1>
+                <p class="text-sm">My address </p>
+                <p class="text-sm">Norway</p>
+              </div>
+              <div class="right">
+                <p class="text-sm">Date: 02.09.2025</p>
+                <p class="text-sm">meko[...]@gmail.com</p>
+              </div>
+            </div>
+            <h2>Summary</h2>
+            <p>I am a web developer with experience in technologies like JavaScript, Node.js, React, and C# (.NET). I’m currently working part-time at Evenstad Music Distribution AS, and I’m looking for new opportunities to apply my backend development skills.</p>
+            <p>I hold a bachelor’s degree in multimedia and another in computer science, and I am currently a master’s student at UiA. I have good experience with PostgreSQL databases and use Figma for prototyping. I’m always interested in learning more and taking on new tasks.</p>
+            <h2>Skills</h2>
+            <ul class="skill-list">
+              <li v-for="(skill, index) in skills.en" :key="index" :class="{'bg-gray-50': index % 2 === 0}">{{ skill }}</li>
+            </ul>
+            <h2>Education</h2>
+            <ul class="education-list">
+              <li v-for="(degree, index) in education.en" :key="index" :class="{'bg-gray-50': index % 2 === 0}">{{ degree }}</li>
+            </ul>
+            <h2>Experience</h2>
+            <ul class="experience-list">
+              <li v-for="(exp, index) in experiences.en" :key="index">{{ exp }}</li>
+            </ul>
+            <h2>Contact Info</h2>
+            <p>Email: meko[...]@gmail.com</p>
+            <p>Phone:+47 ... .. ...</p>
+            <p>LinkedIn: http://www.linkedin.com/in/mekor</p>
+            <h2>Languages</h2>
+            <ul>
+              <li v-for="(lang, index) in languages.en" :key="index">{{ lang }}</li>
+            </ul>
+            <div class="cv-footer">
+              <p>Meko, Rasoulifard, CV og søknad</p>
+              <p>Page 1 of 1</p>
+            </div>
+          </div>
+
+          <!-- Norsk Bokmål CV Tab -->
+          <div v-if="activeTab === 'no'" class="min-h-[200px] pt-2 cv-content" @contextmenu.prevent>
+            <div class="cv-header">
+              <div class="left">
+                <h1>Meko Rasoulifard</h1>
+                <p class="text-sm">My address </p>
+                <p class="text-sm">Norway</p>
+              </div>
+              <div class="right">
+                <p class="text-sm">Dato: 02.09.2025</p>
+                <p class="text-sm">meko[...]@gmail.com</p>
+              </div>
+            </div>
+            <h2>Litt om meg</h2>
+          <p>Jeg er en webutvikler med erfaring i teknologier som JavaScript, Node.js, React og C# (.NET). For tiden jobber jeg deltid hos Evenstad Music Distribution AS, og jeg er på utkikk etter nye muligheter hvor jeg kan bruke mine ferdigheter innen backend-utvikling.</p>
+<p>Jeg har en bachelorgrad i multimedia og en annen i Data, og jeg er for øyeblikket masterstudent ved UiA. Jeg har god erfaring med PostgreSQL-databaser og bruker Figma til prototyping. Jeg er alltid interessert i å lære mer og ta på meg nye oppgaver.</p>
+<p>Jeg trives godt med å jobbe i team, men tar også ansvar for egne oppgaver.</p>
+            <h2>Kompetanse</h2>
+            <ul class="skill-list">
+              <li v-for="(skill, index) in skills.no" :key="index" :class="{'bg-gray-50': index % 2 === 0}">{{ skill }}</li>
+            </ul>
+            <h2>Utdanning</h2>
+            <ul class="education-list">
+              <li v-for="(degree, index) in education.no" :key="index" :class="{'bg-gray-50': index % 2 === 0}">{{ degree }}</li>
+            </ul>
+            <h2>Erfaring</h2>
+            <ul class="experience-list">
+              <li v-for="(exp, index) in experiences.no" :key="index">{{ exp }}</li>
+            </ul>
+            <h2>Kontaktinfo</h2>
+       <p>Email: meko[...]@gmail.com</p>
+            <p>Phone:+47 ... .. ...</p>
+            <p>LinkedIn: http://www.linkedin.com/in/meekor</p>
+            <h2>Språk</h2>
+            <ul>
+              <li v-for="(lang, index) in languages.no" :key="index">{{ lang }}</li>
+            </ul>
+            <div class="cv-footer">
+              <p>Meko, Rasoulifard, CV og søknad</p>
+              <p>Page 1 of 1</p>
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
   </section>
 </template>
@@ -67,6 +180,65 @@ import { ref, onMounted } from 'vue'
 import Card from '../components/Card.vue'
 
 const aboutSection = ref(null)
+const expanded = ref(false)
+const activeTab = ref('en')
+
+const toggleExpand = () => {
+  expanded.value = !expanded.value
+}
+
+const tabClass = (tab) => {
+  return activeTab.value === tab
+    ? 'bg-accent text-bg-dark font-semibold'
+    : 'bg-bg-base text-text-primary hover:bg-accent-hover hover:text-bg-dark'
+}
+
+const skills = {
+  en: [
+    "Web Development: JavaScript, Node.js, C# (.NET), HTML5,React, CSS, Bootstrap",
+    "Database Management: PostgreSQL",
+    "3D Modeling: Autodesk Fusion 360, Blender, ZBrush, Adobe Substance 3D",
+    "2D: Figma,Adobe illustrator,Photoshop,InDesign , Lightroom,Captivate",
+    " Video: After Effects, Premiere Pro, Audition,Media Encoder",
+    "Version Control: Git, GitHub, and AWS for deployment",
+  ],
+  no: [
+    "Programmeringsspråk: JavaScript, Node.js, C# (.NET), HTML5,React, CSS, Bootstrap",
+    "Databasestyring: PostgreSQL",
+    "Metoder: Fullstack-utvikling, API-integrasjoner",
+    "3D-modellering: Autodesk Fusion 360, Blender, ZBrush, Adobe Substance 3D",
+    "2D: Figma,Adobe illustrator,Photoshop,InDesign , Lightroom,Captivate",
+    " Video: After Effects, Premiere Pro, Audition,Media Encoder",
+    "Version Control: Git, GitHub, npm, and Amazon web services(AWS)",
+  ]
+}
+
+const education = {
+  en: [],
+  no: [
+    "August 2024 (present)-Universitetet i Agder(UiA) Master I Multimedia and Educational Technology",
+    "August 2021-Juni 2024-Universitetet i Agder(UiA) Multimedieteknologi og-design",
+  ]
+}
+
+const experiences = {
+  en: [
+    "Currently working part-time at Evenstad Music Distribution AS.",
+    "I enjoy learning new things and improving my skills. I also like taking on new challenges and tasks.",
+  ],
+  no: [
+    "01.06-2021 – present: Evenstadmusikk (AS): Jeg startet praksis hos Evenstad Musikk sommeren 2021, og jobber nå deltid én dag i uken hos Evenstad Music Distribution AS.",
+  ]
+}
+
+const languages = {
+  en: [
+    "Norwegian",
+    "English",
+    "Driver's License: Class B",
+  ],
+  no: ["Norsk", "Engelsk", "Førerkort: Klasse B"]
+}
 
 onMounted(() => {
   const observer = new IntersectionObserver(entries => {
@@ -81,12 +253,11 @@ onMounted(() => {
 
 <style scoped>
 .custom-card p {
-  text-align:start;
+  text-align: start;
   white-space: normal;
   overflow-wrap: break-word;
 }
 
-/* Ensure card container fits text content properly */
 .custom-card {
   display: flex;
   flex-direction: column;
@@ -95,14 +266,108 @@ onMounted(() => {
   max-width: 100%;
 }
 
-
-/* Make Card text justified */
 .card .card-body p {
   text-align: justify;
 }
 
+.cv-content {
+  font-family: 'Times New Roman', Garamond, Georgia, serif;
+  font-size: 0.875rem; /* approx 11pt */
+  line-height: 1.5;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: #5f5e5e;
+  pointer-events: none; /* Prevent interaction to make copying harder */
+}
 
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
 
+.cv-header h1 {
+  font-size: 1.25rem; /* approx 16pt */
+  font-weight: bold;
+}
+
+.cv-header .left p {
+  margin: 0.125rem 0;
+}
+
+.cv-header .right {
+  text-align: right;
+}
+
+.cv-header .right p {
+  margin: 0.125rem 0;
+}
+
+h2 {
+  font-size: 1rem; /* approx 14pt */
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.skill-list,
+.education-list,
+.experience-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-list li,
+.education-list li,
+.experience-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skill-list li:last-child,
+.education-list li:last-child,
+.experience-list li:last-child {
+  border-bottom: none;
+}
+
+.cv-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-size: 0.75rem; /* approx 10pt */
+  color: #969696;
+}
+
+button {
+  border-radius: 0 !important;
+}
+
+:root {
+  --color-accent-hover: #205c6b;
+}
+
+.bg-accent-hover {
+  background-color: var(--color-accent-hover) !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Disable print for CV content */
+@media print {
+  .cv-content {
+    display: none !important;
+  }
+}
 </style>
-
-
