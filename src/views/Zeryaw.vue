@@ -17,7 +17,7 @@
             @click="downloadPdf"
             class="bg-accent text-bg-dark px-4 py-1 text-xs font-semibold hover:bg-accent-hover transition"
           >
-            Download Assignment PDF
+            Download Zeryaw prototype as PDF
           </button>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-center sm:text-left text-text-primary">
