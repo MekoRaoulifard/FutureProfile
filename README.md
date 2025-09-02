@@ -25,4 +25,4 @@ This portfolio reflects both academic and independent work. It also draws on ins
 
 ## License
 
-This project is intended for educational and personal portfolio use only.
+This project is intended for educational and personal portfolio use only
