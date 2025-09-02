@@ -23,9 +23,6 @@ The site highlights my work at Zeryaw (a digital innovation company) and student
 
 This portfolio reflects both academic and independent work. It also draws on insights from:
 
-- Gazi et al. (2024) on CRM, knowledge management, and customer loyalty  
-- Becker et al. (2020) on simulation standards and web-based learning guides  
-
 ## License
 
 This project is intended for educational and personal portfolio use only.
