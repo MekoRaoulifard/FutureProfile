@@ -18,10 +18,6 @@ The site highlights my work at Zeryaw (a digital innovation company) and student
 - **Student Projects**: Learning app, wireframes, interactive prototypes  
 - **AR/VR Projects**: AR museum, VR training, mixed reality interface  
 
-## Links
-
-- Live site: [View on Vercel](https://future-profile.vercel.app/)  
-- GitHub repository: [View on GitHub](https://github.com/yourusername/zeryaw)  
 
 ## References
 
