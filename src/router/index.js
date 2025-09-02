@@ -20,6 +20,6 @@ const routes = [
 ]
 
 export default createRouter({
-  history: createWebHistory('/FutureProfile/'),  
+  history: createWebHistory(), 
   routes,
 })
